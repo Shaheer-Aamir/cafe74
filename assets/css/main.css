@@ -84,8 +84,8 @@ h6 {
 /* PHP Email Form Messages
 ------------------------------*/
 .php-email-form .error-message {
-  display: none;
-  background: #df1529;
+  display: none !important;
+  background: green;
   color: #ffffff;
   text-align: left;
   padding: 15px;
@@ -822,8 +822,6 @@ textarea::placeholder {
   right: 20px;
   bottom: -20px;
   z-index: 99999;
-  width: 55px;
-  height: 55px;
   transition: all 0.4s;
   display: flex;
   align-items: center;

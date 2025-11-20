@@ -82,7 +82,14 @@
                     <i class="bi bi-clock me-2"></i>
                     <div>
                       <small class="text-muted">Open Daily</small>
-                      <div class="fw-medium">11:00 AM - 02:30 AM</div>
+                      <div class="fw-medium">01:00 PM - 01:00 AM</div>
+                    </div>
+                  </div>
+                  <div class="info-item d-flex align-items-center">
+                    <i class="bi bi-telephone me-2"></i>
+                    <div>
+                      <small class="text-muted">Phone</small>
+                      <div class="fw-medium">051-4939688</div>
                     </div>
                   </div>
                   <div class="info-item d-flex align-items-center">
@@ -260,6 +267,10 @@
             </div><!-- End Gallery Item -->
 
             <div class="col-lg-4 col-md-6 gallery-item isotope-item filter-interior">
+              
+            </div><!-- End Gallery Item -->
+
+            <div class="col-lg-4 col-md-6 gallery-item isotope-item filter-interior">
               <div class="gallery-wrap">
                 <img src="assets/img/menu/5.png" class="img-fluid" alt="Restaurant Interior" loading="lazy">
                 <div class="gallery-info">
@@ -329,57 +340,72 @@
                 <p>Book your table in advance and enjoy a smooth, hassle-free dining experience. We’ll have everything prepared just for you.</p>
               </div>
 
-              <form action="forms/book-a-table.php" method="post" role="form" class="php-email-form">
-                <div class="row g-3">
-                  <div class="col-12 form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required="">
-                  </div>
-                  <div class="col-12 form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="text" id="phone" class="form-control" name="phone" placeholder="Your Phone" required="">
-                  </div>
-                  <div class="col-12 form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" class="form-control" name="email" placeholder="Your Email" required="">
-                  </div>
-                  <div class="col-12 form-group">
-                    <label for="people">Number of People</label>
-                    <select name="people" id="people" class="form-select" required="">
-                      <option value="">Select guests</option>
-                      <option value="1">1 Person</option>
-                      <option value="2">2 People</option>
-                      <option value="3">3 People</option>
-                      <option value="4">4 People</option>
-                      <option value="5">5 People</option>
-                      <option value="6">6+ People</option>
-                    </select>
-                  </div>
-                  <div class="col-12 form-group">
-                    <label for="date">Reservation Date</label>
-                    <input type="date" id="date" name="date" class="form-control" required="">
-                  </div>
-                  <div class="col-12 form-group">
-                    <label for="time">Reservation Time</label>
-                    <input type="time" id="time" class="form-control" name="time" required="">
-                  </div>
+              <form action="https://api.web3forms.com/submit" method="POST" class="php-email-form">
 
-                  <div class="col-12 form-group">
-                    <label for="message">Special Requests</label>
-                    <textarea id="message" class="form-control" name="message" rows="2" placeholder="Allergies, special occasions, seating preferences"></textarea>
-                  </div>
-                </div>
+  <!-- REQUIRED: Your Web3Forms API Key -->
+  <input type="hidden" name="access_key" value="d03b0be7-5fc0-4bae-8dcc-ee7fb2d0e8ca">
 
-                <div class="my-3">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!</div>
-                </div>
+  <!-- Email you want submissions delivered to -->
+  <input type="hidden" name="from_name" value="Cafe74 Website Reservation">
+  <input type="hidden" name="replyto" value="cafe74coffe@gmail.com">
 
-                <div class="text-center">
-                  <button type="submit" class="btn-book-table">Confirm Reservation</button>
-                </div>
-              </form>
+  <div class="row g-3">
+    <div class="col-12 form-group">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
+    </div>
+
+    <div class="col-12 form-group">
+      <label for="phone">Phone Number</label>
+      <input type="text" id="phone" name="phone" class="form-control" required>
+    </div>
+
+    <div class="col-12 form-group">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" class="form-control" required>
+    </div>
+
+    <div class="col-12 form-group">
+      <label for="people">Number of People</label>
+      <select name="people" id="people" class="form-select" required>
+        <option value="">Select guests</option>
+        <option value="1">1 Person</option>
+        <option value="2">2 People</option>
+        <option value="3">3 People</option>
+        <option value="4">4 People</option>
+        <option value="5">5 People</option>
+        <option value="6">6+ People</option>
+      </select>
+    </div>
+
+    <div class="col-12 form-group">
+      <label for="date">Reservation Date</label>
+      <input type="date" id="date" name="date" class="form-control" required>
+    </div>
+
+    <div class="col-12 form-group">
+      <label for="time">Reservation Time</label>
+      <input type="time" id="time" name="time" class="form-control" required>
+    </div>
+
+    <div class="col-12 form-group">
+      <label for="message">Special Requests</label>
+      <textarea id="message" class="form-control" name="message" rows="2"></textarea>
+    </div>
+  </div>
+
+  <!-- Success/Error Messages -->
+  <div class="my-3">
+    <div class="loading">Loading</div>
+    <div class="error-message"></div>
+    <div class="sent-message">Your booking request was sent. We will contact you shortly. Thank you!</div>
+  </div>
+
+  <div class="text-center">
+    <button type="submit" class="btn-book-table">Confirm Reservation</button>
+  </div>
+</form>
+
             </div>
           </div>
 
@@ -399,8 +425,7 @@
                     </div>
                     <div class="info-text">
                       <h5>Opening Hours</h5>
-                      <p>Mon - Fri: 11:00 AM - 11:00 PM<br>
-                        Sat - Sun: 10:00 AM - 12:00 AM</p>
+                      <p>Daily: 01:00 PM - 01:00 AM
                     </div>
                   </div>
 
@@ -430,7 +455,7 @@
                     </div>
                     <div class="info-text">
                       <h5>Email Us</h5>
-                      <p>info@cafe74.com</p>
+                      <p>cafe74coffe@gmail.com</p>
                     </div>
                   </div>
                 </div>
@@ -766,7 +791,7 @@
                     <i class="bi bi-envelope"></i>
                     <div>
                       <h4>Email:</h4>
-                      <p>info@cafe74.com</p>
+                      <p>cafe74coffe@gmail.com</p>
                     </div>
                   </div>
 
@@ -798,7 +823,15 @@
 
           <div class="col-lg-7">
             <div class="contact-form-wrapper">
-              <form action="forms/contact.php" method="post" class="php-email-form">
+              <form action="https://api.web3forms.com/submit" method="POST" class="php-email-form">
+                <!-- REQUIRED: Web3Forms Access Key -->
+  <input type="hidden" name="access_key" value="369f66fc-c0e2-450d-ab26-3ea05b4003aa">
+
+  <!-- OPTIONAL: Who will receive the email -->
+  <input type="hidden" name="to_email" value="cafe74coffe@gmail.com">
+
+  <!-- OPTIONAL but recommended: Form name -->
+  <input type="hidden" name="from_name" value="Cafe74 Website Contact Form">
                 <div class="row">
                   <div class="col-md-6 form-group">
                     <label for="name">Your Name</label>
@@ -920,7 +953,7 @@
                 <i class="bi bi-envelope"></i>
               </div>
               <div class="contact-info">
-                <p>info@cafe74.com</p>
+                <p>cafe74coffe@gmail.com</p>
               </div>
             </div>
 
@@ -939,7 +972,7 @@
         <div class="row align-items-center">
           <div class="col-lg-6">
             <div class="copyright">
-              <p>© <span>Copyright</span> <strong class="px-1 sitename">Cafe74</strong> <span>All Rights Reserved</span></p>
+              <p>© <span>Copyright</span> <strong class="sitename">Cafe74</strong> <span>All Rights Reserved</span></p><p style="font-size: 14px;">Designed by <a href="https://www.elite-verse.com/" target="_blank" style="font-weight: 600;">Elite Verse Agency</a></p>
             </div>
           </div>
           <div class="col-lg-6">
@@ -974,6 +1007,57 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+document.querySelectorAll(".php-email-form").forEach(form => {
+  form.addEventListener("submit", async function(e) {
+    e.preventDefault(); // prevent normal submit (no JSON)
+
+    // Reset states
+    form.querySelector(".loading").style.display = "block";
+    form.querySelector(".error-message").style.display = "none";
+    form.querySelector(".sent-message").style.display = "none";
+
+    const action = form.getAttribute("action");
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(action, {
+        method: "POST",
+        body: formData
+      });
+
+      const result = await response.json();
+
+      // Hide loader
+      form.querySelector(".loading").style.display = "none";
+
+      // SUCCESS (FORCE GREEN MESSAGE)
+      if (result.success === true) {
+        form.querySelector(".sent-message").style.display = "block";
+        form.querySelector(".error-message").style.display = "none";
+        form.reset();
+        return;
+      }
+
+      // FAILURE
+      form.querySelector(".error-message").textContent =
+        result.message || "Form submission failed.";
+      form.querySelector(".error-message").style.display = "block";
+
+    } catch (error) {
+      form.querySelector(".loading").style.display = "none";
+      form.querySelector(".error-message").textContent =
+        "Something went wrong. Please try again.";
+      form.querySelector(".error-message").style.display = "block";
+    }
+  });
+});
+</script>
+
+
+
+
 
 </body>
 
